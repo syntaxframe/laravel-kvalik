@@ -1,0 +1,36 @@
+@import "1200.css" only screen and (min-width: 1150px);
+@import "390.css" only screen and (min-width: 350px);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--text-1);
+    font-family: Arial;
+}
+
+:root {
+    --brand-1: #3061df;
+    --brand-1--hover: #2983f3;
+    --brand-text-1: #fff;
+
+    --text-1: #121212;
+    --text-2: #2d2d2d;
+    --text-3: #555;
+
+    --input-border: #d8d8d8;
+    --input-border--focus: #aaa;
+
+    --error-text: #ed1919;
+
+    --bg: #fafafa;
+
+    --modal-1: #fff;
+    --modal-2: #fafafa;
+
+}
+
+body {
+    background: var(--bg);
+}
