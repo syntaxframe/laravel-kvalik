@@ -3,7 +3,7 @@
     <div class="catalog__content container">
         <div class="product">
             <a href="product/{{$product->id}}">
-                <img src="{{'storage/products/'.$product->image}}" alt="image" class="product-card__img">
+                <img src="{{'public/storage/products/'.$product->image}}" alt="image" class="product-card__img">
             </a>
             <div class="">
                 <h3 class="product__title">{{$product->name}}</h3>

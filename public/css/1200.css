@@ -14,15 +14,19 @@ html {
     align-items: center;
 }
 
-a:hover {
-    text-decoration: underline;
+a:not(.btn) {
+    transition: all 0.1s ease-in;
+}
+
+a:not(.btn):hover {
+    color: var(--brand-1--hover);
 }
 
 button, .btn {
     color: var(--brand-text-1);
     background: var(--brand-1);
     border-radius: 6px;
-    padding: 6px 12px;
+    padding: 10px 16px;
     border: none;
     outline: none;
     font-size: 1rem;
@@ -42,6 +46,155 @@ input, select {
 
 input:focus, select:focus {
     border: 1px solid var(--input-border--focus);
+}
+
+.slider-container {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+/*.slider__content {*/
+/*    position: relative;*/
+/*}*/
+
+.slider__quote {
+    position: absolute;
+    font-size: 2rem;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #12121240;
+}
+
+.slider-btns {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding-inline: 20px;
+}
+
+.slider-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.faq {
+    padding-top: 100px;
+}
+
+.faq__wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.question {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question h3 {
+    font-weight: 500;
+}
+
+.answer {
+    position: absolute;
+    top: -30%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.answer.open {
+    margin-top: 20px;
+    position: static;
+    opacity: 1;
+}
+
+.question > span {
+    transform: rotate(45deg);
+    transition: all 0.1s ease;
+}
+
+.question > span.open {
+    transform: rotate(0deg);
+}
+
+footer {
+    margin-top: 150px;
+    padding-block: 20px;
+}
+
+.footer__container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 header {

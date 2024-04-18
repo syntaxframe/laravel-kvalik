@@ -9,7 +9,7 @@
                     <select name="c">
                         <option value="">Выберите категорию</option>
                         @foreach($categories as $category)
-                            <option value="{{$category['id']}}">
+                            <option value="{{$category['id']}}" @if($_GET && $_GET['c'] && $_GET['c'] == $category['id']) selected @endif>
                                 {{$category['name']}}
                             </option>
                         @endforeach
@@ -22,7 +22,7 @@
             @foreach($products as $product)
                 <div class="product-card">
                     <a href="catalog/{{$product->id}}">
-                        <img src="{{'storage/products/'.$product->image}}" alt="image" class="product-card__img">
+                        <img src="{{'public/storage/products/'.$product->image}}" alt="image" class="product-card__img">
                     </a>
                     <h3 class="product-card__title">{{$product->name}}</h3>
                     <p class="product-card__price">{{$product->price}} r</p>
