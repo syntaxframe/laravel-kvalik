@@ -37,10 +37,14 @@ class RegLogController extends Controller
 
     public function signin(SigninRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-        Auth::attempt($credentials, true);
-        $request->session()->regenerate();
-        return redirect(route('home'));
+        $credentials = $request->only('login', 'password');
+
+        if (Auth::attempt($credentials, true)) {
+            $request->session()->regenerate();
+            return redirect()->intended(route('home'));
+        }
+
+        return back()->withInput()->withErrors(['login' => 'Invalid data']);
     }
 
     public function logout()
